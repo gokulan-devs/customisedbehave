@@ -1,5 +1,5 @@
 from selenium import webdriver
-from helper.helper_base import HelperFunc
+from helper_base import HelperFunc
  
 def get_browser(browser):
     if browser == "chrome":

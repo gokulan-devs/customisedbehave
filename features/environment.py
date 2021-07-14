@@ -5,12 +5,12 @@ from configparser import ConfigParser
 from selenium.webdriver.common.keys import Keys
 import time
 from behave.fixture import use_fixture_by_tag
-from helper.helper_web import get_browser
+from helper_web import get_browser
  
 def before_all(context):
     config = ConfigParser()
-    print((os.path.join(os.getcwd(), 'setup.cfg')))
-    my_file = (os.path.join(os.getcwd(), 'setup.cfg'))
+    print((os.path.join(os.getcwd(), 'behave.ini')))
+    my_file = (os.path.join(os.getcwd(), 'behave.ini'))
     config.read(my_file)
  
     # Reading the browser type from the configuration file for Selenium Python Tutorial
