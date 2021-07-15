@@ -1,0 +1,2 @@
+Google apps: "//a[@aria-label=\"Google apps\"]"
+Books: "//span[text()=\"Books\"]/ancestor::a/parent::li"

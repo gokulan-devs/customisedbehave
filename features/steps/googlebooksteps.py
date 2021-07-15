@@ -3,21 +3,31 @@ import os
 from configparser import ConfigParser
 from selenium.webdriver.common.keys import Keys
 import time
-from behave import given, when, then
+from behave import given, when, then, step
 
-@given('Google page is launched')
-def step_impl(context):
-    context.helperfunc.open('https://books.google.co.in/')
+
+# globals().update(locators)
+
+@step('{page} is launched')
+def step_impl(context,page):
+    context.helperfunc.open(page)
     context.helperfunc.maximize()
+
+@when('click on {Field}')
+def step_impl(context,Field):
+    context.helperfunc.find_element(Field).click()
 
 
 @when('User navigates to Google books app')
 def step_impl(context):
-    pass
+    context.execute_steps('When click on Google apps')
+    context.execute_steps('When Google books is launched')
+
 
 
 @then('Google book logo should appear in the page')
 def step_impl(context):
+    # context.helperfunc.
     pass
 
 
