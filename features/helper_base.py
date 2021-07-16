@@ -5,6 +5,7 @@ from locators import locators
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from urls import urls
+from gokuls_data_loader import data_table
 
 class HelperFunc(object):
     __TIMEOUT = 10
@@ -50,3 +51,18 @@ class HelperFunc(object):
     #Actions
     def click(self,element):
         self._driver.click(element)
+
+    def get_data(self,scenario,datalist):
+        datalist=[x.strip() for x in datalist.split(',')]
+        data_vals={}
+        for item in datalist:
+           data_vals[item]=(data_table[scenario]['data'][0][item])
+        print(data_vals)
+        return data_vals.copy()
+    
+    def fill_data(self,field_value_set):
+        for loc,data in field_value_set.items():
+            self.find_element(loc).click()
+            self.find_element(loc).send_keys(data)
+    
+

@@ -13,10 +13,6 @@ def step_impl(context,page):
     context.helperfunc.open(page)
     context.helperfunc.maximize()
 
-@when('click on {Field}')
-def step_impl(context,Field):
-    context.helperfunc.find_element(Field).click()
-
 
 @when('User navigates to Google books app')
 def step_impl(context):
