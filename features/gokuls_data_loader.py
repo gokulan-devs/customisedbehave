@@ -1,6 +1,6 @@
 import os
 
-data_file= (os.path.join(os.getcwd(), 'feature/data/examples.csv'))
+data_file= (os.path.join(os.getcwd(), 'features/data/examples.csv'))
 
 table = {}
 f = open(data_file)
