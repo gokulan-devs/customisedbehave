@@ -1,0 +1,9 @@
+Google apps: "//a[@aria-label=\"Google apps\"]"
+Books: "//span[text()=\"Books\"]/ancestor::a/parent::li"
+Submit: //*[text()='Submit']
+Google form confirmation message: //div[contains(@class,'ConfirmationMessage')]
+Name: //*[text()='Name']/ancestor::div[contains(.,'Your answer')][1]//input
+Email: //*[text()='Email']/ancestor::div[contains(.,'Your answer')][1]//input
+Address: //*[text()='Address']/ancestor::div[contains(.,'Your answer')][1]//textarea
+Phone Number: //*[text()='Phone number']/ancestor::div[contains(.,'Your answer')][1]//input
+Comments: //*[text()='Comments']/ancestor::div[contains(.,'Your answer')][1]//textarea
