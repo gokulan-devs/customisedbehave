@@ -28,4 +28,9 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        python -m behave
+        python -m behave --junit
+    - uses: KyleAure/junit-report-annotations-action@1.5
+      if: always()
+      with:
+        name: "junits"
+        path: "**/TEST-*.xml"
